@@ -1,0 +1,46 @@
+{
+  "presets": [
+    "react",
+    "env",
+    "stage-1"
+  ],
+  "plugins": [
+    "transform-object-rest-spread",
+    "transform-class-properties",
+    ["root-import", [{
+      "rootPathPrefix": "@"
+    }]]
+  ],
+  "env": {
+    "production": {
+      "presets": [
+        ["env", {
+          "targets": {
+            "browsers": "last 2 Chrome versions"
+          },
+          "useBuiltIns": true
+        }]
+      ]
+    },
+    "development": {
+      "presets": [
+        ["env", {
+          "targets": {
+            "browsers": "last 2 Chrome versions"
+          },
+          "useBuiltIns": true
+        }]
+      ],
+    },
+    "test": {
+      "presets": [
+        ["env", {
+          "targets": {
+            "node": "current"
+          },
+          "useBuiltIns": true
+        }]
+      ]
+    }
+  }
+}
