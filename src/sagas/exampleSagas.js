@@ -30,7 +30,7 @@ function * handleGet (action) {
 
 function * handleGetOne (action) {
   try {
-    const {id} = action.payload
+    const { id } = action.payload
     const { data } = yield call(axios.get, `https://jsonplaceholder.typicode.com/posts/${id}`)
     yield put(actionGetOne.success({ data }))
   } catch (e) {
@@ -61,7 +61,7 @@ function * handlePut (action) {
 function * handlePatch (action) {
   try {
     const { id, updateData } = action.payload
-    const { data } = yield call(axios.put, `https://jsonplaceholder.typicode.com/posts/${id}`, { updateData })
+    const { data } = yield call(axios.patch, `https://jsonplaceholder.typicode.com/posts/${id}`, { updateData })
     yield put(actionPatch.success({ data }))
   } catch (e) {
     yield put(actionPatch.failure({ error: { ...e } }))
@@ -70,7 +70,7 @@ function * handlePatch (action) {
 
 function * handleDelete (action) {
   try {
-    const {id} = action.payload
+    const { id } = action.payload
     const { data } = yield call(axios.delete, `https://jsonplaceholder.typicode.com/posts/${id}`)
     yield put(actionDelete.success({ data }))
   } catch (e) {

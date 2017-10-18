@@ -6,13 +6,16 @@ const WithLoader = (WrappedComponent) => {
     static propTypes = {
       loading: PropTypes.bool
     }
+
     state = {
       loading: false
     }
+
     componentWillReceiveProps (nextProps) {
       const { loading } = nextProps
       this.setState({ loading })
     }
+
     render () {
       const { loading } = this.state
       return (

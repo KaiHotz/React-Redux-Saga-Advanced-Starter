@@ -9,7 +9,7 @@ export function createAction (type, data = {}) {
   return {type, payload: data}
 }
 
-export const errorMessage = (error, format) => {
+export const errorMessage = (error) => {
   if (!error) {
     return ''
   }
@@ -21,5 +21,5 @@ export const errorMessage = (error, format) => {
       : 'InternalServerError'
   }
 
-  return format({id: `error.${code}`})
+  return code
 }
