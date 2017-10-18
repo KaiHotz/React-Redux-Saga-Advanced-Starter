@@ -5,6 +5,7 @@
 - Axios
 - WebPack
 - Reselect
+- Immutable
 - Recompose
 - Redux-Saga
 - React-Router
