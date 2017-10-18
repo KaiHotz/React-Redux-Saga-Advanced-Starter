@@ -11,7 +11,7 @@ import {
   errorSelector
 } from '@/src/selectors/exampleSelector'
 
-import { exampleAction } from '@/src/actions'
+import { actionFetchOne } from '@/src/actions'
 
 class ExampleContainer extends Component {
   static propTypes = {
@@ -24,7 +24,7 @@ class ExampleContainer extends Component {
   }
 
   componentDidMount () {
-    this.props.load()
+    this.props.load('1')
   }
 
   render () {
@@ -65,7 +65,7 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps (dispatch) {
   return {
-    load: () => dispatch(exampleAction.request())
+    load: (id) => dispatch(actionFetchOne.request(id))
   }
 }
 
