@@ -1,39 +1,45 @@
 import { createAction } from '@/src/utils'
 import {
-  API_FETCH,
-  API_FETCH_ALL,
-  API_SAVE,
-  API_UPDATE,
+  API_GET,
+  API_GET_ONE,
+  API_POST,
+  API_PUT,
+  API_PATCH,
   API_DELETE
 } from './types'
 
-export const actionFetchOne = {
-  request: (id) => createAction(API_FETCH.REQUEST, { id, fetching: true, success: false, error: null }),
-  success: (data) => createAction(API_FETCH.SUCCESS, { ...data, fetching: false, success: true, error: null }),
-  failure: (error) => createAction(API_FETCH.FAILURE, { ...error, fetching: false, success: false })
+export const actionGet = {
+  request: () => createAction(API_GET.REQUEST, { loading: true, success: false, error: null }),
+  success: (data) => createAction(API_GET.SUCCESS, { ...data, loading: false, success: true, error: null }),
+  failure: (error) => createAction(API_GET.FAILURE, { ...error, loading: false, success: false })
 }
 
-export const actionFetchAll = {
-  request: () => createAction(API_FETCH_ALL.REQUEST, { fetching: true, success: false, error: null }),
-  success: (data) => createAction(API_FETCH_ALL.SUCCESS, { ...data, fetching: false, success: true, error: null }),
-  failure: (error) => createAction(API_FETCH_ALL.FAILURE, { ...error, fetching: false, success: false })
+export const actionGetOne = {
+  request: (id) => createAction(API_GET_ONE.REQUEST, { id, loading: true, success: false, error: null }),
+  success: (data) => createAction(API_GET_ONE.SUCCESS, { ...data, loading: false, success: true, error: null }),
+  failure: (error) => createAction(API_GET_ONE.FAILURE, { ...error, loading: false, success: false })
 }
 
-export const actionSave = {
-  save: (data) => createAction(API_SAVE.SAVE, { ...data, fetching: true, success: false, error: null }),
-  success: (data) => createAction(API_SAVE.SUCCESS, { ...data, fetching: false, success: true, error: null }),
-  failure: (error) => createAction(API_SAVE.FAILURE, { ...error, fetching: false, success: false })
+export const actionPost = {
+  save: (data) => createAction(API_POST.SAVE, { ...data, loading: true, success: false, error: null }),
+  success: (data) => createAction(API_POST.SUCCESS, { ...data, loading: false, success: true, error: null }),
+  failure: (error) => createAction(API_POST.FAILURE, { ...error, loading: false, success: false })
 }
 
-export const actionUpdate = {
-  upadte: (id, data) => createAction(API_UPDATE.UPDATE, { id, ...data, fetching: true, success: false, error: null }),
-  success: (data) => createAction(API_UPDATE.SUCCESS, { ...data, fetching: false, success: true, error: null }),
-  failure: (error) => createAction(API_UPDATE.FAILURE, { ...error, fetching: false, success: false })
+export const actionPut = {
+  upadte: (id, data) => createAction(API_PUT.UPDATE, { id, ...data, loading: true, success: false, error: null }),
+  success: (data) => createAction(API_PUT.SUCCESS, { ...data, loading: false, success: true, error: null }),
+  failure: (error) => createAction(API_PUT.FAILURE, { ...error, loading: false, success: false })
+}
+
+export const actionPatch = {
+  upadte: (id, data) => createAction(API_PATCH.UPDATE, { id, ...data, loading: true, success: false, error: null }),
+  success: (data) => createAction(API_PATCH.SUCCESS, { ...data, loading: false, success: true, error: null }),
+  failure: (error) => createAction(API_PATCH.FAILURE, { ...error, loading: false, success: false })
 }
 
 export const actionDelete = {
-  delete: (id) => createAction(API_DELETE.DELETE, { id, fetching: true, success: false, error: null }),
-  success: (data) => createAction(API_DELETE.SUCCESS, { ...data, fetching: false, success: true, error: null }),
-  failure: (error) => createAction(API_DELETE.FAILURE, { ...error, fetching: false, success: false })
+  delete: (id) => createAction(API_DELETE.DELETE, { id, loading: true, success: false, error: null }),
+  success: (data) => createAction(API_DELETE.SUCCESS, { ...data, loading: false, success: true, error: null }),
+  failure: (error) => createAction(API_DELETE.FAILURE, { ...error, loading: false, success: false })
 }
-

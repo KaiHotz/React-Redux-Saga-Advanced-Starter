@@ -1,8 +1,8 @@
 import { fork } from 'redux-saga/effects'
-import watchExampleSaga from './exampleSaga'
+import watchExampleSagas from './exampleSagas'
 
 export default function * rootSaga () {
   yield [
-    fork(watchExampleSaga)
+    fork(watchExampleSagas)
   ]
 }

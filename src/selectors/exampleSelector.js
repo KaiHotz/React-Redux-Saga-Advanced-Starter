@@ -10,10 +10,10 @@ const exampleSelector = () => createSelector(
   }
 )
 
-const fetchingSelector = () => createSelector(
+const loadingSelector = () => createSelector(
   exampleState,
   (state) => {
-    return state.get('fetching')
+    return state.get('loading')
   }
 )
 
@@ -26,6 +26,6 @@ const errorSelector = () => createSelector(
 )
 export {
   exampleSelector,
-  fetchingSelector,
+  loadingSelector,
   errorSelector
 }

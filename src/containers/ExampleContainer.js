@@ -7,11 +7,12 @@ import { Link } from 'react-router-dom'
 
 import {
   exampleSelector,
-  fetchingSelector,
+  loadingSelector,
   errorSelector
 } from '@/src/selectors/exampleSelector'
 
-import { actionFetchOne } from '@/src/actions'
+import { actionGetOne } from '@/src/actions'
+import WithLoader from '@/src/hocs/WithLoader'
 
 class ExampleContainer extends Component {
   static propTypes = {
@@ -24,7 +25,7 @@ class ExampleContainer extends Component {
   }
 
   componentDidMount () {
-    this.props.load('1')
+    this.props.loadOne('1')
   }
 
   render () {
@@ -59,16 +60,17 @@ class ExampleContainer extends Component {
 
 const mapStateToProps = createStructuredSelector({
   exampleData: exampleSelector(),
-  fetching: fetchingSelector(),
+  loading: loadingSelector(),
   error: errorSelector()
 })
 
 function mapDispatchToProps (dispatch) {
   return {
-    load: (id) => dispatch(actionFetchOne.request(id))
+    loadOne: (id) => dispatch(actionGetOne.request(id))
   }
 }
 
 export default compose(
-  connect(mapStateToProps, mapDispatchToProps)
+  connect(mapStateToProps, mapDispatchToProps),
+  WithLoader
 )(ExampleContainer)
