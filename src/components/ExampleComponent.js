@@ -12,7 +12,7 @@ class Test extends Component {
           Back
         </Link>
         <br />
-        <h1>Test Component</h1>
+        <h1>Example Component</h1>
       </div>
     )
   }
