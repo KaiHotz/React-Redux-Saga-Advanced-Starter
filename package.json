@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": "https://github.com/KaiHotz/React-Redux-Simple-Starter",
   "author": "Kai Hotz",
-  "license": "ISC",
+  "license": "unlicense",
   "standard": {
     "parser": "babel-eslint",
     "env": [
