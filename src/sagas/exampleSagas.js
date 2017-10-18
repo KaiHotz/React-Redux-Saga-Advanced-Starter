@@ -19,7 +19,7 @@ import {
   actionDelete
 } from '@/src/actions'
 
-function * handleGet (action) {
+function * handleGet () {
   try {
     const { data } = yield call(axios.get, 'https://jsonplaceholder.typicode.com/posts/')
     yield put(actionGet.success({ data }))
