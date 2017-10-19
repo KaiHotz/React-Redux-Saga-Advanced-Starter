@@ -1,3 +1,11 @@
+// In case you need to use a selector
+// import also select from redux-saga/effects
+// and then simplie yield select(yourSelector())
+//
+// In case you need to redirect to whatever route
+// import { push } from react-router-redux and then
+// yield put(push('/next-page'))
+
 import { put, call, takeLatest } from 'redux-saga/effects'
 import axios from 'axios'
 
