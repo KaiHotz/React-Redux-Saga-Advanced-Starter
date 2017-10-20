@@ -34,23 +34,25 @@ class ExampleContainer extends Component {
       <div>
         <h1>Example Container</h1>
         <br />
-        <div className='card w-50'>
-          <h4 className='card-header'>
-            Example Data:
-          </h4>
-          <div className='card-body'>
-            <h4 className='card-title'>
-              {exampleData.title}
+        <div className='row'>
+          <div className='card'>
+            <h4 className='card-header'>
+              Example Data:
             </h4>
-            <p className='card-text'>
-              {exampleData.body}
-            </p>
-            <Link
-              to='/exampleComponent'
-              className='btn btn-warning'
-            >
-              Link to Example Component
-            </Link>
+            <div className='card-body'>
+              <h4 className='card-title'>
+                {exampleData.title}
+              </h4>
+              <p className='card-text'>
+                {exampleData.body}
+              </p>
+              <Link
+                to='/exampleComponent'
+                className='btn btn-warning'
+              >
+                Link to Example Component
+              </Link>
+            </div>
           </div>
         </div>
       </div>
