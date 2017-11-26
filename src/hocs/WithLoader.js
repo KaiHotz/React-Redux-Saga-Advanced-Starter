@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import LoadingAnimation from '@/src/components/LoadingAnimation'
+
 const WithLoader = (WrappedComponent) => {
   return class isLoading extends Component {
     static propTypes = {
@@ -18,15 +19,10 @@ const WithLoader = (WrappedComponent) => {
 
     render () {
       const { loading } = this.state
-      return (
-        <div>
-          {
-            loading &&
-              <LoadingAnimation iconSize={44} />
-          }
-          <WrappedComponent {...this.props} />
-        </div>
-      )
+      return [
+        loading && <LoadingAnimation key='loading' />,
+        <WrappedComponent key='loaded' {...this.props} />
+      ]
     }
   }
 }

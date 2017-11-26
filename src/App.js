@@ -3,6 +3,7 @@ import { compose } from 'recompose'
 import { Route, Switch, withRouter } from 'react-router-dom'
 import ExampleComponent from '@/src/components/ExampleComponent'
 import ExampleContainer from '@/src/containers/ExampleContainer'
+import WithErrors from '@/src/hocs/WithErrors'
 
 class App extends Component {
   render () {
@@ -16,5 +17,6 @@ class App extends Component {
 }
 
 export default compose(
-  withRouter
+  withRouter,
+  WithErrors
 )(App)

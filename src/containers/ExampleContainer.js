@@ -20,7 +20,7 @@ class ExampleContainer extends Component {
       PropTypes.object,
       PropTypes.array
     ]),
-    fetching: PropTypes.bool,
+    loading: PropTypes.bool,
     error: PropTypes.object
   }
 
