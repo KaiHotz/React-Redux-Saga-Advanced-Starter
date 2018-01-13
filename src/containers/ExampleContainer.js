@@ -19,10 +19,15 @@ class ExampleContainer extends Component {
     exampleData: PropTypes.oneOfType([
       PropTypes.object,
       PropTypes.array
-    ]),
+    ]).isRequired,
     loading: PropTypes.bool,
     error: PropTypes.object
-  }
+  };
+
+  static defaultProps = {
+    loading: false,
+    error: null
+  };
 
   componentDidMount () {
     this.props.loadOne('1')
