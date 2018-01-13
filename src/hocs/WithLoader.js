@@ -5,20 +5,11 @@ import LoadingAnimation from '@/src/components/LoadingAnimation'
 const WithLoader = (WrappedComponent) => {
   return class isLoading extends Component {
     static propTypes = {
-      loading: PropTypes.bool
-    }
-
-    state = {
-      loading: false
-    }
-
-    componentWillReceiveProps (nextProps) {
-      const { loading } = nextProps
-      this.setState({ loading })
+      loading: PropTypes.bool.isRequired
     }
 
     render () {
-      const { loading } = this.state
+      const { loading } = this.props
       return [
         loading && <LoadingAnimation key='loading' />,
         <WrappedComponent key='loaded' {...this.props} />
