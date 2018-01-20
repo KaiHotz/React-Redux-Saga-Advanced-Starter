@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component, Fragment } from 'react'
 
 const WithErrors = (WrappedComponent) => {
   return class ErrorBoundary extends Component {
@@ -16,18 +16,22 @@ const WithErrors = (WrappedComponent) => {
 
     render () {
       const { error, errorInfo } = this.state
-      return [
-        error &&
-          <div key='errors'>
-            <h2>Something went wrong.</h2>
-            <details style={{ whiteSpace: 'pre-wrap' }}>
-              {error.toString()}
-              <br />
-              {errorInfo.componentStack}
-            </details>
-          </div>,
-        <WrappedComponent key='ok' {...this.props} />
-      ]
+      return (
+        <Fragment>
+          {
+            error &&
+              <div>
+                <h2>Something went wrong.</h2>
+                <details style={{ whiteSpace: 'pre-wrap' }}>
+                  {error.toString()}
+                  <br />
+                  {errorInfo.componentStack}
+                </details>
+              </div>
+          }
+          <WrappedComponent {...this.props} />
+        </Fragment>
+      )
     }
   }
 }

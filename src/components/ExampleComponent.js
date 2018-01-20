@@ -1,21 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
-class Test extends Component {
-  render () {
-    return (
-      <div>
-        <Link
-          to='/'
-          className='btn btn-primary'
-        >
-          Back
-        </Link>
-        <br />
-        <h1>Example Component</h1>
-      </div>
-    )
-  }
+const Test = (props) => {
+  return (
+    <div>
+      <Link
+        to='/'
+        className='btn btn-primary'
+      >
+        Back
+      </Link>
+      <br />
+      <h1>Example Component</h1>
+    </div>
+  )
 }
 
 export default Test

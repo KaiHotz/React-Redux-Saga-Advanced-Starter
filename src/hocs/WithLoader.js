@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import LoadingAnimation from '@/src/components/LoadingAnimation'
 
@@ -10,10 +10,12 @@ const WithLoader = (WrappedComponent) => {
 
     render () {
       const { loading } = this.props
-      return [
-        loading && <LoadingAnimation key='loading' />,
-        <WrappedComponent key='loaded' {...this.props} />
-      ]
+      return (
+        <Fragment>
+          {loading && <LoadingAnimation />}
+          <WrappedComponent {...this.props} />
+        </Fragment>
+      )
     }
   }
 }
