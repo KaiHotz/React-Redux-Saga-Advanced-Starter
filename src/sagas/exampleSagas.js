@@ -14,15 +14,15 @@ import {
 } from '@/src/actions/types'
 
 import {
-  itemAction
+  item
 } from '@/src/actions'
 
 function * handleGet () {
   try {
     const { data } = yield call(axios.get, 'https://jsonplaceholder.typicode.com/posts/')
-    yield put(itemAction.success({ data }))
+    yield put(item.success({ data }))
   } catch (e) {
-    yield put(itemAction.failure({ error: { ...e } }))
+    yield put(item.failure({ error: { ...e } }))
   }
 }
 
@@ -30,9 +30,9 @@ function * handleGetOne (action) {
   try {
     const { id } = action.payload
     const { data } = yield call(axios.get, `https://jsonplaceholder.typicode.com/posts/${id}`)
-    yield put(itemAction.success({ data }))
+    yield put(item.success({ data }))
   } catch (e) {
-    yield put(itemAction.failure({ error: { ...e } }))
+    yield put(item.failure({ error: { ...e } }))
   }
 }
 
@@ -40,9 +40,9 @@ function * handlePost (action) {
   try {
     const { saveData } = action.payload
     const { data } = yield call(axios.post, 'https://jsonplaceholder.typicode.com/posts/', { saveData })
-    yield put(itemAction.success({ data }))
+    yield put(item.success({ data }))
   } catch (e) {
-    yield put(itemAction.failure({ error: { ...e } }))
+    yield put(item.failure({ error: { ...e } }))
   }
 }
 
@@ -50,9 +50,9 @@ function * handlePut (action) {
   try {
     const { id, updateData } = action.payload
     const { data } = yield call(axios.put, `https://jsonplaceholder.typicode.com/posts/${id}`, { updateData })
-    yield put(itemAction.success({ data }))
+    yield put(item.success({ data }))
   } catch (e) {
-    yield put(itemAction.failure({ error: { ...e } }))
+    yield put(item.failure({ error: { ...e } }))
   }
 }
 
@@ -60,9 +60,9 @@ function * handlePatch (action) {
   try {
     const { id, updateData } = action.payload
     const { data } = yield call(axios.patch, `https://jsonplaceholder.typicode.com/posts/${id}`, { updateData })
-    yield put(itemAction.success({ data }))
+    yield put(item.success({ data }))
   } catch (e) {
-    yield put(itemAction.failure({ error: { ...e } }))
+    yield put(item.failure({ error: { ...e } }))
   }
 }
 
@@ -70,9 +70,9 @@ function * handleDelete (action) {
   try {
     const { id } = action.payload
     const { data } = yield call(axios.delete, `https://jsonplaceholder.typicode.com/posts/${id}`)
-    yield put(itemAction.success({ data }))
+    yield put(item.success({ data }))
   } catch (e) {
-    yield put(itemAction.failure({ error: { ...e } }))
+    yield put(item.failure({ error: { ...e } }))
   }
 }
 
