@@ -4,7 +4,8 @@ export const ITEM = createActionTypes('ITEM', [
   'GET',
   'GET_ONE',
   'SAVE',
-  'UPDATE',
+  'PUT',
+  'PATCH',
   'DELETE',
   'SUCCESS',
   'FAILURE'

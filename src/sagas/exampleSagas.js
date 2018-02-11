@@ -81,8 +81,8 @@ function * watchExampleSagas () {
     takeLatest(ITEM.GET, handleGet),
     takeLatest(ITEM.GET_ONE, handleGetOne),
     takeLatest(ITEM.SAVE, handlePost),
-    takeLatest(ITEM.UPDATE, handlePut),
-    takeLatest(ITEM.UPDATE, handlePatch),
+    takeLatest(ITEM.PUT, handlePut),
+    takeLatest(ITEM.PATCH, handlePatch),
     takeLatest(ITEM.DELETE, handleDelete)
   ]
 }

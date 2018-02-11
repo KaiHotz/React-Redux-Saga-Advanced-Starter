@@ -11,7 +11,7 @@ import {
   errorSelector
 } from '@/src/selectors/exampleSelector'
 
-import { itemAction } from '@/src/actions'
+import { item } from '@/src/actions'
 import WithLoader from '@/src/hocs/WithLoader'
 
 class ExampleContainer extends Component {
@@ -71,10 +71,8 @@ const mapStateToProps = createStructuredSelector({
   error: errorSelector()
 })
 
-function mapDispatchToProps (dispatch) {
-  return {
-    loadOne: (id) => dispatch(itemAction.requestOne(id))
-  }
+const mapDispatchToProps = {
+  loadOne: item.requestOne
 }
 
 export default compose(
