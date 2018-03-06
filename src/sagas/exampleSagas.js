@@ -6,7 +6,7 @@
 // import { push } from react-router-redux and then
 // yield put(push('/next-page'))
 
-import { put, call, takeLatest } from 'redux-saga/effects'
+import { put, call, takeLatest, all } from 'redux-saga/effects'
 import axios from 'axios'
 
 import {
@@ -77,14 +77,14 @@ function * handleDelete (action) {
 }
 
 function * watchExampleSagas () {
-  yield [
+  yield all([
     takeLatest(ITEM.GET, handleGet),
     takeLatest(ITEM.GET_ONE, handleGetOne),
     takeLatest(ITEM.SAVE, handlePost),
     takeLatest(ITEM.PUT, handlePut),
     takeLatest(ITEM.PATCH, handlePatch),
     takeLatest(ITEM.DELETE, handleDelete)
-  ]
+  ])
 }
 
 export default watchExampleSagas
