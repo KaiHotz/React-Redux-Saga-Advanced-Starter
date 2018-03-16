@@ -7,9 +7,9 @@
   "plugins": [
     "transform-object-rest-spread",
     "transform-class-properties",
-    ["root-import", [{
+    ["root-import", {
       "rootPathPrefix": "@"
-    }]]
+    }]
   ],
   "env": {
     "production": {
@@ -30,7 +30,7 @@
           },
           "useBuiltIns": true
         }]
-      ],
+      ]
     },
     "test": {
       "presets": [
