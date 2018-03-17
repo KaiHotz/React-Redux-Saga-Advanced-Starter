@@ -7,13 +7,7 @@
   "author": "Kai Hotz",
   "license": "MIT",
   "standard": {
-    "parser": "babel-eslint",
-    "env": [
-      "jest"
-    ],
-    "globals": [
-      "fetch"
-    ]
+    "parser": "babel-eslint"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -59,11 +53,11 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "start": "webpack-dev-server --mode development --open",
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
     "watch": "npm run start -- --watch",
-    "lint": "standard",
+    "lint": "eslint --init",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
-    "build": "webpack --mode productio"
+    "build": "webpack --mode production"
   }
 }
