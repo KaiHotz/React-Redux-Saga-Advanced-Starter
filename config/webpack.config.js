@@ -25,12 +25,12 @@ module.exports = {
     vendor: VENDOR_LIBS
   },
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../build'),
     filename: '[name].[hash].js'
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.join(__dirname, 'src'),
+    contentBase: path.resolve(__dirname, '../src'),
     hot: true,
     inline: true,
     port: 3000,
