@@ -6,10 +6,7 @@
   ],
   "plugins": [
     "transform-object-rest-spread",
-    "transform-class-properties",
-    ["root-import", {
-      "rootPathPrefix": "@"
-    }]
+    "transform-class-properties"
   ],
   "env": {
     "production": {
