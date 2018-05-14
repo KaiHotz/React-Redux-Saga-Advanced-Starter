@@ -8,7 +8,8 @@
     "transform-object-rest-spread",
     "transform-class-properties",
     ["root-import", {
-      "rootPathPrefix": "@"
+      "rootPathPrefix": "@",
+      "rootPathSuffix": "src/"
     }]
   ],
   "env": {

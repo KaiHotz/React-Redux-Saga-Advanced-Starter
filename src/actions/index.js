@@ -1,4 +1,4 @@
-import { createAction } from '@/src/utils'
+import { createAction } from '@/utils'
 import {
   ITEM
 } from './types'

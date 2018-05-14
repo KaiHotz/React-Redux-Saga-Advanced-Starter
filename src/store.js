@@ -2,7 +2,7 @@ import { fromJS } from 'immutable'
 import { compose, createStore, applyMiddleware } from 'redux'
 import { routerMiddleware } from 'react-router-redux'
 import createSagaMiddleware, { END } from 'redux-saga'
-import rootReducer from '@/src/reducers'
+import rootReducer from '@/reducers'
 
 const sagaMiddleware = createSagaMiddleware()
 

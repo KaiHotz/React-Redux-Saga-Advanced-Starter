@@ -9,10 +9,10 @@ import {
   exampleSelector,
   loadingSelector,
   errorSelector
-} from '@/src/selectors/exampleSelector'
+} from '@/selectors/exampleSelector'
 
-import { item } from '@/src/actions'
-import WithLoader from '@/src/hocs/WithLoader'
+import { item } from '@/actions'
+import WithLoader from '@/hocs/WithLoader'
 
 class ExampleContainer extends Component {
   static propTypes = {

@@ -11,11 +11,11 @@ import axios from 'axios'
 
 import {
   ITEM
-} from '@/src/actions/types'
+} from '@/actions/types'
 
 import {
   item
-} from '@/src/actions'
+} from '@/actions'
 
 function * handleGet () {
   try {

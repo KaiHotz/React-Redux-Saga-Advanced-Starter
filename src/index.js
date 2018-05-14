@@ -4,9 +4,9 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'react-router-redux'
 import { createBrowserHistory } from 'history'
-import rootSaga from '@/src/sagas'
-import configureStore from '@/src/store'
-import App from '@/src/App'
+import rootSaga from '@/sagas'
+import configureStore from '@/store'
+import App from '@/App'
 
 import '@/styles/styles.scss'
 

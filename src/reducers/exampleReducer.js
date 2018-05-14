@@ -1,5 +1,5 @@
 import { fromJS, List } from 'immutable'
-import { ITEM } from '@/src/actions/types'
+import { ITEM } from '@/actions/types'
 
 const initialState = fromJS({
   data: new List([]),
