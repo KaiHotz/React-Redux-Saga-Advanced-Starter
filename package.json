@@ -76,7 +76,7 @@
     ]
   },
   "scripts": {
-    "clean": "rimraf dist",
+    "clean": "rimraf build",
     "start": "webpack-dev-server --config ./config/webpack.config.js --mode development",
     "watch": "npm run start -- --watch",
     "lint": "standard",
