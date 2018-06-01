@@ -1,6 +1,6 @@
-var webpack = require('webpack')
-var path = require('path')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const VENDOR_LIBS = [
   'react',
@@ -16,18 +16,18 @@ const VENDOR_LIBS = [
   'redux-saga',
   'redux-immutable',
   'react-router-dom',
-  'react-router-redux'
+  'react-router-redux',
 ]
 
 module.exports = {
   entry: {
-    bundle: ['babel-polyfill', './src/index.js'],
-    vendor: VENDOR_LIBS
+    bundle: ['babel-polyfill', './src/index.jsx'],
+    vendor: VENDOR_LIBS,
   },
   output: {
     path: path.resolve(__dirname, '../build'),
     chunkFilename: '[name].[hash].js',
-    filename: '[name].[hash].js'
+    filename: '[name].[hash].js',
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -37,36 +37,36 @@ module.exports = {
     port: 3000,
     historyApiFallback: true,
     compress: true,
-    open: true
+    open: true,
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: ['babel-loader'],
       },
       {
         test: /\.(scss|sass|css)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        use: ['file-loader']
-      }
-    ]
+        use: ['file-loader'],
+      },
+    ],
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
   },
   optimization: {
-    runtimeChunk: true
+    runtimeChunk: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      template: 'src/index.html',
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin()
-  ]
+    new webpack.NamedModulesPlugin(),
+  ],
 }

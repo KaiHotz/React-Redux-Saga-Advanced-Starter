@@ -1,20 +1,19 @@
 import React, { Component, Fragment } from 'react'
 
-const WithErrors = (WrappedComponent) => {
-  return class ErrorBoundary extends Component {
+const WithErrors = (WrappedComponent) => class ErrorBoundary extends Component {
     state = {
       error: null,
-      errorInfo: null
+      errorInfo: null,
     }
 
-    componentDidCatch (error, errorInfo) {
+    componentDidCatch(error, errorInfo) {
       this.setState({
         error,
-        errorInfo
+        errorInfo,
       })
     }
 
-    render () {
+    render() {
       const { error, errorInfo } = this.state
       return (
         <Fragment>
@@ -33,6 +32,5 @@ const WithErrors = (WrappedComponent) => {
         </Fragment>
       )
     }
-  }
 }
 export default WithErrors

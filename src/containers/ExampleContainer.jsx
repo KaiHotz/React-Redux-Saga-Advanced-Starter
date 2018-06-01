@@ -6,54 +6,54 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import {
-  exampleSelector,
-  loadingSelector,
-  errorSelector
-} from '@/selectors/exampleSelector'
+  exampleDataSelector,
+  fetchingSelector,
+} from '../selectors/exampleSelector'
 
-import { item } from '@/actions'
-import WithLoader from '@/hocs/WithLoader'
+import { item } from '../actions'
+import LoadingAnimation from '../components/LoadingAnimation'
+import WithErrors from '../hocs/WithErrors'
 
 class ExampleContainer extends Component {
   static propTypes = {
     exampleData: PropTypes.oneOfType([
       PropTypes.object,
-      PropTypes.array
+      PropTypes.array,
     ]).isRequired,
-    loading: PropTypes.bool,
-    error: PropTypes.object
+    fetching: PropTypes.bool,
+    loadOne: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
-    loading: false,
-    error: null
+    fetching: false,
   };
 
-  componentDidMount () {
+  componentDidMount() {
     this.props.loadOne('1')
   }
 
-  render () {
-    const { exampleData } = this.props
+  render() {
+    const { exampleData, fetching } = this.props
+    if (fetching) return <LoadingAnimation />
     return (
       <div>
         <h1>Example Container</h1>
         <br />
-        <div className='row'>
-          <div className='card'>
-            <h4 className='card-header'>
+        <div className="row">
+          <div className="card">
+            <h4 className="card-header">
               Example Data:
             </h4>
-            <div className='card-body'>
-              <h4 className='card-title'>
+            <div className="card-body">
+              <h4 className="card-title">
                 {exampleData.title}
               </h4>
-              <p className='card-text'>
+              <p className="card-text">
                 {exampleData.body}
               </p>
               <Link
-                to='/exampleComponent'
-                className='btn btn-warning'
+                to="/exampleComponent"
+                className="btn btn-warning"
               >
                 Link to Example Component
               </Link>
@@ -66,16 +66,15 @@ class ExampleContainer extends Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-  exampleData: exampleSelector(),
-  loading: loadingSelector(),
-  error: errorSelector()
+  exampleData: exampleDataSelector(),
+  fetching: fetchingSelector(),
 })
 
 const mapDispatchToProps = {
-  loadOne: item.requestOne
+  loadOne: item.requestOne,
 }
 
 export default compose(
+  WithErrors,
   connect(mapStateToProps, mapDispatchToProps),
-  WithLoader
 )(ExampleContainer)

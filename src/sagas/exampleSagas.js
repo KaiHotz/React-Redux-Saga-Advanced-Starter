@@ -9,15 +9,11 @@
 import { put, call, takeLatest, all } from 'redux-saga/effects'
 import axios from 'axios'
 
-import {
-  ITEM
-} from '@/actions/types'
+import { ITEM } from '../actions/types'
 
-import {
-  item
-} from '@/actions'
+import { item } from '../actions'
 
-function * handleGet () {
+function* handleGet() {
   try {
     const { data } = yield call(axios.get, 'https://jsonplaceholder.typicode.com/posts/')
     yield put(item.success({ data }))
@@ -26,7 +22,7 @@ function * handleGet () {
   }
 }
 
-function * handleGetOne (action) {
+function* handleGetOne(action) {
   try {
     const { id } = action.payload
     const { data } = yield call(axios.get, `https://jsonplaceholder.typicode.com/posts/${id}`)
@@ -36,7 +32,7 @@ function * handleGetOne (action) {
   }
 }
 
-function * handlePost (action) {
+function* handlePost(action) {
   try {
     const { saveData } = action.payload
     const { data } = yield call(axios.post, 'https://jsonplaceholder.typicode.com/posts/', { saveData })
@@ -46,7 +42,7 @@ function * handlePost (action) {
   }
 }
 
-function * handlePut (action) {
+function* handlePut(action) {
   try {
     const { id, updateData } = action.payload
     const { data } = yield call(axios.put, `https://jsonplaceholder.typicode.com/posts/${id}`, { updateData })
@@ -56,7 +52,7 @@ function * handlePut (action) {
   }
 }
 
-function * handlePatch (action) {
+function* handlePatch(action) {
   try {
     const { id, updateData } = action.payload
     const { data } = yield call(axios.patch, `https://jsonplaceholder.typicode.com/posts/${id}`, { updateData })
@@ -66,7 +62,7 @@ function * handlePatch (action) {
   }
 }
 
-function * handleDelete (action) {
+function* handleDelete(action) {
   try {
     const { id } = action.payload
     const { data } = yield call(axios.delete, `https://jsonplaceholder.typicode.com/posts/${id}`)
@@ -76,14 +72,14 @@ function * handleDelete (action) {
   }
 }
 
-function * watchExampleSagas () {
+function* watchExampleSagas() {
   yield all([
     takeLatest(ITEM.GET, handleGet),
     takeLatest(ITEM.GET_ONE, handleGetOne),
     takeLatest(ITEM.SAVE, handlePost),
     takeLatest(ITEM.PUT, handlePut),
     takeLatest(ITEM.PATCH, handlePatch),
-    takeLatest(ITEM.DELETE, handleDelete)
+    takeLatest(ITEM.DELETE, handleDelete),
   ])
 }
 

@@ -1,14 +1,14 @@
-import 'babel-polyfill'
+import 'babel-polyfill' // eslint-disable-line
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'react-router-redux'
 import { createBrowserHistory } from 'history'
-import rootSaga from '@/sagas'
-import configureStore from '@/store'
-import App from '@/App'
+import rootSaga from './sagas'
+import configureStore from './store'
+import App from './App'
 
-import '@/styles/styles.scss'
+import './styles/styles.scss'
 
 const initialState = {}
 const history = createBrowserHistory()
@@ -22,7 +22,7 @@ const render = Component => {
         <Component />
       </ConnectedRouter>
     </Provider>
-    , document.getElementById('app')
+    , document.getElementById('app'),
   )
 }
 
@@ -32,8 +32,9 @@ if (module.hot) {
   module.hot.accept(
     './App',
     () => {
+      // eslint-disable-next-line
       const App = require('./App').default
       render(App)
-    }
+    },
   )
 }
