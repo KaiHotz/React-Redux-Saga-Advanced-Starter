@@ -34,7 +34,9 @@ class ExampleContainer extends Component {
 
   render() {
     const { exampleData, fetching } = this.props
+
     if (fetching) return <LoadingAnimation />
+
     return (
       <div>
         <h1>Example Container</h1>
