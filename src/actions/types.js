@@ -10,3 +10,5 @@ export const ITEM = createActionTypes('ITEM', [
   'SUCCESS',
   'FAILURE',
 ])
+
+export default ITEM

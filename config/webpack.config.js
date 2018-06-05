@@ -42,6 +42,13 @@ module.exports = {
   module: {
     rules: [
       {
+        enforce: 'pre',
+        test: /\.(js|jsx)$/,
+        use: 'eslint-loader',
+        exclude: /node_modules/,
+        include: path.src,
+      },
+      {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader'],

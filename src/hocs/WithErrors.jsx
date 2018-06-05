@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 
-const WithErrors = (WrappedComponent) => class ErrorBoundary extends Component {
+const WithErrors = WrappedComponent => class ErrorBoundary extends Component {
     state = {
       error: null,
       errorInfo: null,
