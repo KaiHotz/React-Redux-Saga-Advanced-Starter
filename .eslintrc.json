@@ -1,9 +1,11 @@
 {
   "root": true,
   "extends": [
-    "eslint:recommended",
-    "airbnb",
-    "plugin:react/recommended"
+    "airbnb"
+  ],
+  "plugins": [
+    "jest",
+    "react"
   ],
   "parser": "babel-eslint",
   "parserOptions": {
