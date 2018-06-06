@@ -1,7 +1,8 @@
 {
   "root": true,
   "extends": [
-    "airbnb"
+    "airbnb",
+    "plugin:react/recommended"
   ],
   "plugins": [
     "jest",
