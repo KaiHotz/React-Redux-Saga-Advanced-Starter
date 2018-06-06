@@ -6,12 +6,22 @@
   "repository": "https://github.com/KaiHotz/React-Redux-Simple-Starter",
   "author": "Kai Hotz",
   "license": "MIT",
+  "scripts": {
+    "clean": "rimraf build",
+    "start": "webpack-dev-server --config ./config/webpack.config.js --mode development",
+    "watch": "npm run start -- --watch",
+    "lint": "esw --ext .jsx --ext .js --color",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "jest",
+    "test:watch": "npm run test -- --watch",
+    "build": "webpack --config ./config/webpack.config.js --mode production"
+  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
-    "babel-jest": "^22.4.3",
+    "babel-jest": "^23.0.1",
     "babel-loader": "^7.1.4",
-    "babel-plugin-root-import": "^5.1.0",
+    "babel-plugin-root-import": "^6.0.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-polyfill": "^6.26.0",
@@ -25,20 +35,20 @@
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jest": "^21.17.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.8.2",
+    "eslint-plugin-react": "^7.9.1",
     "eslint-watch": "^3.1.5",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
     "jasmine-expect": "^3.8.3",
-    "jest": "^22.4.3",
-    "jest-cli": "^22.4.3",
+    "jest": "^23.1.0",
+    "jest-cli": "^23.1.0",
     "node-sass": "^4.9.0",
-    "react-test-renderer": "^16.3.2",
+    "react-test-renderer": "^16.4.0",
     "rimraf": "^2.6.2",
-    "sass-loader": "^7.0.1",
+    "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
-    "webpack": "^4.8.3",
-    "webpack-cli": "^2.1.3",
+    "webpack": "^4.11.1",
+    "webpack-cli": "^3.0.2",
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
@@ -48,12 +58,12 @@
     "history": "^4.7.2",
     "immutable": "^3.8.2",
     "prop-types": "^15.6.1",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
     "react-redux": "^5.0.7",
-    "react-router-dom": "^4.2.2",
+    "react-router-dom": "^4.3.0",
     "react-router-redux": "^5.0.0-alpha.6",
-    "recompose": "^0.27.0",
+    "recompose": "^0.27.1",
     "redux": "^4.0.0",
     "redux-immutable": "^4.0.0",
     "redux-saga": "^0.16.0",
@@ -73,19 +83,10 @@
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
     ]
   },
-  "scripts": {
-    "clean": "rimraf build",
-    "start": "webpack-dev-server --config ./config/webpack.config.js --mode development",
-    "watch": "npm run start -- --watch",
-    "lint": "esw --ext .jsx --ext .js --color",
-    "lint:fix": "npm run lint -- --fix",
-    "test": "jest",
-    "test:watch": "npm run test -- --watch",
-    "build": "webpack --config ./config/webpack.config.js --mode production"
-  },
   "babel": {
     "presets": [
-      "react-app"
+      "env",
+      "react"
     ]
   }
 }
