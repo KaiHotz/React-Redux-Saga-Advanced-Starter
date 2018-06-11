@@ -13,7 +13,7 @@
     "lint": "esw --ext .jsx --ext .js --color",
     "lint:fix": "npm run lint -- --fix",
     "test": "jest",
-    "test:watch": "npm run test -- --watch",
+    "test:coverage": "npm run test -- --coverage --colors",
     "build": "webpack --config ./config/webpack.config.js --mode production"
   },
   "devDependencies": {
@@ -71,9 +71,18 @@
   },
   "jest": {
     "verbose": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,mjs}"
+    ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js"
     ],
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
+      "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}"
+    ],
+    "testEnvironment": "node",
+    "testURL": "http://localhost",
     "transform": {
       "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
@@ -81,6 +90,15 @@
     },
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
+    "moduleFileExtensions": [
+      "web.js",
+      "js",
+      "json",
+      "web.jsx",
+      "jsx",
+      "node",
+      "mjs"
     ]
   },
   "babel": {

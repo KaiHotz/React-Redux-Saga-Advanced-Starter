@@ -37,3 +37,21 @@ Click [here](https://github.com/KaiHotz/React-Redux-Saga-Advanced-Starter/archiv
   > in your Browser open http://localhost:3000
 ```
 
+## Testing
+
+### Resources
+- [Jasmine Matchers](https://github.com/JamieMason/Jasmine-Matchers)
+- [Enzyme](http://airbnb.io/enzyme/)
+- [Jest](https://facebook.github.io/jest/)
+
+### To run Tests
+```
+  > npm run test
+```
+
+### To run Tests with coverage
+```
+  > npm run test:coverage
+```
+
+
