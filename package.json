@@ -103,8 +103,7 @@
   },
   "babel": {
     "presets": [
-      "env",
-      "react"
+      "react-app"
     ]
   }
 }
