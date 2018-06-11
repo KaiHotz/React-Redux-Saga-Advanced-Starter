@@ -24,6 +24,12 @@
     "jest": true
   },
   "rules": {
+    "no-shadow": 0,
+    "newline-before-return": "error",
+    "import/no-unresolved": 0,
+    "import/extensions": 0,
+    "react/forbid-prop-types": 0,
+    "global-require": 0,
     "no-multiple-empty-lines": [
       "error",
       {

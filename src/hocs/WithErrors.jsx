@@ -15,6 +15,7 @@ const WithErrors = WrappedComponent => class ErrorBoundary extends Component {
 
     render() {
       const { error, errorInfo } = this.state
+
       return (
         <Fragment>
           {
