@@ -19,17 +19,19 @@ const WithErrors = WrappedComponent => class ErrorBoundary extends Component {
       return (
         <Fragment>
           {
-            error &&
-              <div>
+            error
+            ? (
+              <Fragment>
                 <h2>Something went wrong.</h2>
                 <details style={{ whiteSpace: 'pre-wrap' }}>
                   {error.toString()}
                   <br />
                   {errorInfo.componentStack}
                 </details>
-              </div>
+              </Fragment>
+            )
+            : <WrappedComponent {...this.props} />
           }
-          <WrappedComponent {...this.props} />
         </Fragment>
       )
     }
