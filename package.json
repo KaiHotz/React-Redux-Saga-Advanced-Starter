@@ -14,7 +14,7 @@
     "lint:fix": "npm run lint -- --fix",
     "test": "jest",
     "test:coverage": "npm run test -- --coverage --colors",
-    "build": "webpack --config ./config/webpack.config.js --mode production"
+    "build": "npm run clean && webpack --config ./config/webpack.config.js --mode production"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
