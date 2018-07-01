@@ -17,6 +17,7 @@
     "build": "npm run clean && webpack --config ./config/webpack.config.js --mode production"
   },
   "devDependencies": {
+    "autoprefixer": "^8.6.4",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
     "babel-jest": "^23.0.1",
@@ -43,6 +44,7 @@
     "jest": "^23.1.0",
     "jest-cli": "^23.1.0",
     "node-sass": "^4.9.0",
+    "postcss-loader": "^2.1.5",
     "react-test-renderer": "^16.4.0",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.0.3",
