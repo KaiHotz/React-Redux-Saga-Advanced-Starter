@@ -1,9 +1,9 @@
 import React from 'react'
 import { compose } from 'recompose'
 import { Route, Switch, withRouter } from 'react-router-dom'
+import WithErrors from './hocs/WithErrors'
 import ExampleComponent from './components/ExampleComponent'
 import ExampleContainer from './containers/ExampleContainer'
-import WithErrors from './hocs/WithErrors'
 
 const App = () => (
   <Switch>

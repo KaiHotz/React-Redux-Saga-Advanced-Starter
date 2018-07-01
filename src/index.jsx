@@ -1,4 +1,3 @@
-import 'babel-polyfill' // eslint-disable-line
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
@@ -22,7 +21,7 @@ const render = Component => {
         <Component />
       </ConnectedRouter>
     </Provider>
-    , document.getElementById('app'),
+    , document.querySelector('.container'),
   )
 }
 
