@@ -13,6 +13,6 @@ const App = () => (
 )
 
 export default compose(
-  withRouter,
   WithErrors,
+  withRouter,
 )(App)
