@@ -26,6 +26,7 @@
   "rules": {
     "no-shadow": 0,
     "newline-before-return": "error",
+    "import/no-extraneous-dependencies": 0,
     "import/no-unresolved": 0,
     "import/extensions": 0,
     "react/forbid-prop-types": 0,
