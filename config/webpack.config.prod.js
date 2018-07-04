@@ -38,6 +38,7 @@ module.exports = {
             options: {
               minimize: true,
               importLoaders: 2,
+              modules: false,
             },
           },
           {
