@@ -7,7 +7,7 @@ const exampleDataSelector = () => createSelector(
   state => {
     const data = state.get('data')
 
-    return data ? data.toJS() : data
+    return data?.toJS() || data
   },
 )
 
@@ -21,7 +21,7 @@ const errorSelector = () => createSelector(
   state => {
     const error = state.get('error')
 
-    return error ? error.toJS() : error
+    return error?.toJS() || error
   },
 )
 export {
