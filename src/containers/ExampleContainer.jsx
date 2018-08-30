@@ -29,7 +29,8 @@ class ExampleContainer extends Component {
   };
 
   componentDidMount() {
-    this.props.loadOne('1')
+    const { loadOne } = this.props
+    loadOne('1')
   }
 
   render() {

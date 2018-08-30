@@ -6,7 +6,9 @@
 // import { push } from react-router-redux and then
 // yield put(push('/next-page'))
 
-import { put, call, takeLatest, all } from 'redux-saga/effects'
+import {
+  put, call, takeLatest, all,
+} from 'redux-saga/effects'
 import axios from 'axios'
 
 import { ITEM } from '../actions/types'

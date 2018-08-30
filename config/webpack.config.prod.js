@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: {
-    bundle: ['babel-polyfill', './src/index.jsx'],
+    bundle: ['@babel/polyfill', './src/index.jsx'],
   },
   output: {
     path: path.resolve(__dirname, '../build'),
