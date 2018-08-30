@@ -20,8 +20,8 @@ const render = Component => {
       <ConnectedRouter history={history}>
         <Component />
       </ConnectedRouter>
-    </Provider>
-    , document.querySelector('.container'),
+    </Provider>,
+    document.querySelector('.container'),
   )
 }
 
