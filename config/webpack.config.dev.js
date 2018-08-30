@@ -2,6 +2,8 @@ const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const protocol = process.env.HTTPS === 'true' ? 'https' : 'http'
+
 module.exports = {
   entry: {
     bundle: ['@babel/polyfill', './src/index.jsx'],
@@ -17,9 +19,14 @@ module.exports = {
     hot: true,
     inline: true,
     port: 3000,
-    historyApiFallback: true,
     compress: true,
     open: true,
+    quiet: true,
+    https: protocol === 'https',
+    overlay: false,
+    historyApiFallback: {
+      disableDotRule: true,
+    },
   },
   module: {
     rules: [
