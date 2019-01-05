@@ -1,11 +1,12 @@
 import { fromJS } from 'immutable'
 import { compose, createStore, applyMiddleware } from 'redux'
+import { routerMiddleware } from 'react-router-redux'
 import createSagaMiddleware, { END } from 'redux-saga'
 import rootReducer from './reducers'
 
 const sagaMiddleware = createSagaMiddleware()
 
-const configureStore = (initialState = {}) => {
+const configureStore = (initialState = {}, history) => {
   const composeEnhancers = process.env.NODE_ENV !== 'production'
     && typeof window === 'object'
     && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
@@ -16,6 +17,7 @@ const configureStore = (initialState = {}) => {
 
   const middlewares = [
     sagaMiddleware,
+    routerMiddleware(history),
   ]
 
   const enhancers = [

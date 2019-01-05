@@ -1,17 +1,17 @@
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
 ## This is an advanced Boilerplate Project using:
 
-- React
 - Redux
 - Axios
 - Eslint
-- WebPack
 - Reselect
 - Immutable
 - Recompose
 - Redux-Saga
 - React-Router
-
-All done with custom WebPack config., HMR (Hot Module Replacement) enabled, Babel preset ENV and Babel root import.
+- React-Router-Redux
 
 ### Getting Started
 
@@ -22,8 +22,8 @@ There are two methods for getting started with this repo.
 ```
   > git clone git@github.com:KaiHotz/React-Redux-Saga-Advanced-Starter.git
   > cd React-Redux-Saga-Advanced-Starter
-  > npm install
-  > npm start
+  > yarn install
+  > yarn start
   > in your Browser open http://localhost:3000
 ```
 
@@ -31,8 +31,8 @@ There are two methods for getting started with this repo.
 Click [here](https://github.com/KaiHotz/React-Redux-Saga-Advanced-Starter/archive/master.zip) to download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
 
 ```
-  > npm install
-  > npm start
+  > yarn install
+  > yarn start
   > in your Browser open http://localhost:3000
 ```
 
@@ -45,12 +45,5 @@ Click [here](https://github.com/KaiHotz/React-Redux-Saga-Advanced-Starter/archiv
 
 ### To run Tests
 ```
-  > npm run test
+  > yarn test
 ```
-
-### To run Tests with coverage
-```
-  > npm run test:coverage
-```
-
-
