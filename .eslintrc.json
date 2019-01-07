@@ -67,7 +67,6 @@
       "error",
       "as-needed"
     ],
-    "no-invalid-this": "error",
     "semi": [
       2,
       "never"
