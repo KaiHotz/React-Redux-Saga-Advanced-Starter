@@ -1,7 +1,0 @@
-.git
-build
-node_modules
-coverage
-config
-scripts
-serviceWorker.js

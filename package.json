@@ -11,9 +11,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=node",
-    "eject": "react-scripts eject",
-    "lint": "esw --ext .jsx --ext .js --color",
-    "lint:fix": "npm run lint -- --fix"
+    "eject": "react-scripts eject"
   },
   "browserslist": {
     "production": [
@@ -36,7 +34,7 @@
     "react-dom": "^16.8.6",
     "react-redux": "^5.1.1",
     "react-router-dom": "^4.3.1",
-    "react-router-redux": "^5.0.0-alpha.9",
+    "react-router-redux": "^5.0.0-alpha.8",
     "react-scripts": "3.0.1",
     "recompose": "^0.30.0",
     "redux": "^4.0.4",
@@ -47,11 +45,6 @@
   "devDependencies": {
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
-    "eslint-config-airbnb": "^17.1.1",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jest": "^22.12.0",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.14.2",
     "eslint-watch": "^6.0.0",
     "jasmine-expect": "^4.0.2",
     "node-sass": "^4.12.0",
