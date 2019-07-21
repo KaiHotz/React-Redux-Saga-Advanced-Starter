@@ -5,7 +5,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - Redux
 - Axios
-- Eslint
 - Reselect
 - Immutable
 - Recompose
