@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { ConnectedRouter } from 'react-router-redux'
+import { Router } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 
 import * as serviceWorker from './serviceWorker'
@@ -20,9 +20,9 @@ store.runSaga(rootSaga)
 const render = Component => {
   ReactDOM.render(
     <Provider store={store}>
-      <ConnectedRouter history={history}>
+      <Router history={history}>
         <Component />
-      </ConnectedRouter>
+      </Router>
     </Provider>,
     document.getElementById('root'),
   )
