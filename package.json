@@ -27,7 +27,6 @@
   },
   "dependencies": {
     "axios": "^0.20.0",
-    "connected-react-router": "^6.8.0",
     "history": "^5.0.0",
     "immutable": "^4.0.0-rc.12",
     "prop-types": "^15.7.2",
