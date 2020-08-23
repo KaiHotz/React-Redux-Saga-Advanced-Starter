@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const exampleComponent = () => (
+export const ExampleComponent = () => (
   <div>
     <Link
       to="/"
@@ -13,5 +13,3 @@ const exampleComponent = () => (
     <h1>Example Component</h1>
   </div>
 )
-
-export default exampleComponent

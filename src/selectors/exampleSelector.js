@@ -2,7 +2,7 @@ import { createSelector } from 'reselect'
 
 const exampleState = state => state.get('exampleData')
 
-const exampleDataSelector = () => createSelector(
+const exampleDataSelector = createSelector(
   exampleState,
   state => {
     const data = state.get('data')
@@ -11,12 +11,12 @@ const exampleDataSelector = () => createSelector(
   },
 )
 
-const fetchingSelector = () => createSelector(
+const fetchingSelector = createSelector(
   exampleState,
   state => state.get('fetching'),
 )
 
-const errorSelector = () => createSelector(
+const errorSelector = createSelector(
   exampleState,
   state => {
     const error = state.get('error')

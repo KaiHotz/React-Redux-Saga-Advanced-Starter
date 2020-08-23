@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 
-const WithErrors = WrappedComponent => class ErrorBoundary extends Component {
+export const WithErrors = WrappedComponent => class ErrorBoundary extends Component {
     state = {
       error: null,
       errorInfo: null,
@@ -36,4 +36,3 @@ const WithErrors = WrappedComponent => class ErrorBoundary extends Component {
       )
     }
 }
-export default WithErrors

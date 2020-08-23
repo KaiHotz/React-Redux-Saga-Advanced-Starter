@@ -2,13 +2,14 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { Router } from 'react-router-dom'
+import { ConnectedRouter } from 'connected-react-router'
 import { createBrowserHistory } from 'history'
 
 import * as serviceWorker from './serviceWorker'
 
 import rootSaga from './sagas'
 import configureStore from './store'
-import App from './App'
+import { App } from './App'
 
 import './styles/styles.scss'
 
@@ -21,7 +22,7 @@ const render = Component => {
   ReactDOM.render(
     <Provider store={store}>
       <Router history={history}>
-        <Component />
+          <Component />
       </Router>
     </Provider>,
     document.getElementById('root'),

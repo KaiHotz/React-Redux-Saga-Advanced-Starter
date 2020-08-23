@@ -23,5 +23,3 @@ export const item = {
   }),
   failure: error => createAction(ITEM.FAILURE, { ...error, fetching: false, success: false }),
 }
-
-export default item
