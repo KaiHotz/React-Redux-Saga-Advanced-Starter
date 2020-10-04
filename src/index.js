@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 import rootSaga from './sagas'
 import configureStore from './store'
-import { App } from './App'
+import App from './App'
 import * as serviceWorker from './serviceWorker'
 import './styles/styles.scss'
 

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import { compose } from 'redux'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
@@ -12,7 +11,7 @@ import { item } from '../actions'
 import { LoadingAnimation } from '../components/LoadingAnimation'
 import { WithErrors } from '../hocs/WithErrors'
 
-const ExampleContainer = () => {
+export const ExampleContainer = () => {
   const dispatch = useDispatch()
   const exampleData = useSelector(exampleDataSelector)
   const fetching = useSelector(fetchingSelector)
@@ -51,7 +50,3 @@ const ExampleContainer = () => {
       </div>
   )
 }
-
-export default compose(
-  WithErrors,
-)(ExampleContainer)
