@@ -44,7 +44,7 @@ const ExampleContainer = () => {
                 className="btn btn-warning"
               >
                 Link to Example Component
-                </Link>
+              </Link>
             </div>
           </div>
         </div>

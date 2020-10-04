@@ -1,15 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { Router } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
-
-import * as serviceWorker from './serviceWorker'
-
 import rootSaga from './sagas'
 import configureStore from './store'
 import { App } from './App'
-
+import * as serviceWorker from './serviceWorker'
 import './styles/styles.scss'
 
 const initialState = {}
@@ -20,9 +17,9 @@ store.runSaga(rootSaga)
 const render = Component => {
   ReactDOM.render(
     <Provider store={store}>
-      <Router history={history}>
-          <Component />
-      </Router>
+      <BrowserRouter history={history}>
+        <Component />
+      </BrowserRouter>
     </Provider>,
     document.getElementById('root'),
   )
