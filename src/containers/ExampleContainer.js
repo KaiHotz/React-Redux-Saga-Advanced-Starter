@@ -1,15 +1,12 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-
 import {
   exampleDataSelector,
   fetchingSelector,
 } from '../selectors/exampleSelector'
-
 import { item } from '../actions'
 import { LoadingAnimation } from '../components/LoadingAnimation'
-import { WithErrors } from '../hocs/WithErrors'
 
 export const ExampleContainer = () => {
   const dispatch = useDispatch()
